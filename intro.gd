@@ -8,4 +8,4 @@ func _ready():
 	$Player.play("Fade Out")
 	await get_tree().create_timer(5).timeout
 	# TODO : Replace below with scene
-	get_tree().quit()
+	get_tree().change_scene_to_file("res://start.tscn")

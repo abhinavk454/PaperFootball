@@ -1,6 +1,83 @@
-[gd_scene load_steps=2 format=3 uid="uid://3g5rb5djsujq"]
+[gd_scene load_steps=7 format=3 uid="uid://3g5rb5djsujq"]
 
 [ext_resource type="Script" path="res://intro.gd" id="1_dp03a"]
+[ext_resource type="Texture2D" uid="uid://bmlp5s2htosoq" path="res://intro_logo.png" id="2_xuuak"]
 
-[node name="Node2D" type="Node2D"]
+[sub_resource type="Animation" id="Animation_blr01"]
+resource_name = "Fade In"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Forground:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.1, 2.1, 3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(0, 0, 0, 0.760784), Color(0, 0, 0, 0.368627), Color(0, 0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_llcaq"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Forground:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_hu20g"]
+resource_name = "Fade Out"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Forground:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1, 2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0.329412), Color(0, 0, 0, 0.682353), Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_xy0l6"]
+_data = {
+"Fade In": SubResource("Animation_blr01"),
+"Fade Out": SubResource("Animation_hu20g"),
+"RESET": SubResource("Animation_llcaq")
+}
+
+[node name="Intro" type="Node2D"]
 script = ExtResource("1_dp03a")
+
+[node name="Player" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_xy0l6")
+}
+
+[node name="Background" type="ColorRect" parent="."]
+offset_left = -40.0
+offset_top = -4.0
+offset_right = 1127.0
+offset_bottom = 2464.0
+
+[node name="Logo" type="Sprite2D" parent="Background"]
+position = Vector2(576, 1218)
+texture = ExtResource("2_xuuak")
+
+[node name="Forground" type="ColorRect" parent="."]
+offset_left = -27.0
+offset_top = -12.0
+offset_right = 1127.0
+offset_bottom = 2435.0
+color = Color(0, 0, 0, 1)

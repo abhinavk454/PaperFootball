@@ -5,6 +5,6 @@ extends Node2D
 func _ready():
 	$StartButton.connect("pressed",_on_touched)
 	$ExitButton.connect("pressed",_on_touched)
-	
+
 func _on_touched():
 	get_tree().quit()

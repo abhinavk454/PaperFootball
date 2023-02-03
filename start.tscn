@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://bwsijowu7xqjy"]
+[gd_scene load_steps=4 format=3 uid="uid://bwsijowu7xqjy"]
 
 [ext_resource type="Texture2D" uid="uid://s60sltjk0ann" path="res://Start_Screen.png" id="1_1hbte"]
 [ext_resource type="Script" path="res://start.gd" id="1_38fc1"]
+[ext_resource type="AudioStream" uid="uid://cc0x5cv36inah" path="res://start.wav" id="3_gwgm7"]
 
 [node name="Start" type="Node2D"]
 script = ExtResource("1_38fc1")
@@ -34,3 +35,8 @@ offset_left = 504.0
 offset_top = 2000.0
 offset_right = 636.0
 offset_bottom = 2025.0
+
+[node name="MusicBox" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_gwgm7")
+volume_db = 1.5
+autoplay = true

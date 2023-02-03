@@ -7,6 +7,6 @@ func _ready():
 	$Audio.play()
 	await get_tree().create_timer(6).timeout
 	$Player.play("Fade Out")
-	await get_tree().create_timer(5).timeout
+	await get_tree().create_timer(4).timeout
 	$Audio.stop()
 	get_tree().change_scene_to_file("res://start.tscn")

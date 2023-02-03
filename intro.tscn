@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://3g5rb5djsujq"]
+[gd_scene load_steps=8 format=3 uid="uid://3g5rb5djsujq"]
 
 [ext_resource type="Script" path="res://intro.gd" id="1_dp03a"]
 [ext_resource type="Texture2D" uid="uid://bmlp5s2htosoq" path="res://intro_logo.png" id="2_xuuak"]
+[ext_resource type="AudioStream" uid="uid://cldaqokgr1gjv" path="res://Daisy-Bell.wav" id="3_u2kcy"]
 
 [sub_resource type="Animation" id="Animation_blr01"]
 resource_name = "Fade In"
@@ -81,3 +82,6 @@ offset_top = -12.0
 offset_right = 1127.0
 offset_bottom = 2435.0
 color = Color(0, 0, 0, 1)
+
+[node name="Audio" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_u2kcy")

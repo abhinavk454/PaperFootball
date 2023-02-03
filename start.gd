@@ -3,6 +3,7 @@ extends Node2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	$MusicBox.play()
 	$StartButton.connect("pressed",_on_touched)
 	$ExitButton.connect("pressed",_on_touched)
 
